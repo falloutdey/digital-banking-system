@@ -1,7 +1,7 @@
 package br.com.falloutdey.bank.domain.model;
 public class Conta {
     private String tipoConta;
-    private double saldo;
+    private double saldo = 0.0;
 
     public Conta(String tipoConta, double saldo) {
         this.tipoConta = tipoConta;
