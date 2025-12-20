@@ -1,0 +1,12 @@
+# Java
+*.class
+bin/
+out/
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Libs locais
+lib/
