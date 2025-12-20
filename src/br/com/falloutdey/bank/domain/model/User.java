@@ -1,8 +1,13 @@
 package br.com.falloutdey.bank.domain.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private String nome;
     private String email;
     private String senha;
+    private List<Conta> contas = new ArrayList<>();
 
     public User(String nome, String email, String senha) {
         this.nome = nome;
@@ -10,44 +15,34 @@ public class User {
         this.senha = senha;
     }
 
-    /** 
-     * @return String
-     */
+    public List<Conta> getContas() {
+        return contas;
+    }
+
+    public void adicionarConta(Conta conta) {
+        this.contas.add(conta);
+    }
+
     public String getNome() {
         return nome;
     }
 
-    /** 
-     * @param nome
-     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
-    /** 
-     * @return String
-     */
     public String getEmail() {
         return email;
     }
 
-    /** 
-     * @param email
-     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    /** 
-     * @return String
-     */
     public String getSenha() {
         return senha;
     }
 
-    /** 
-     * @param senha
-     */
     public void setSenha(String senha) {
         this.senha = senha;
     }

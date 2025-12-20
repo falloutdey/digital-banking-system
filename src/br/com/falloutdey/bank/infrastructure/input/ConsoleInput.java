@@ -26,7 +26,7 @@ public class ConsoleInput {
         }
     }
 
-    public String letString(String input) {
+    public String lerString(String input) {
         return input(input, Linha -> Linha, "Input Inválido");
     }
 

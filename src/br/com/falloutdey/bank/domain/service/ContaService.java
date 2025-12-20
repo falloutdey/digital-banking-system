@@ -1,6 +1,10 @@
 package br.com.falloutdey.bank.domain.service;
 
+import br.com.falloutdey.bank.domain.model.User;
+
 public class ContaService {
     
-    // Conta conta = new Conta()
+    public static void criarConta(String nome, String email, String senha, String tipoConta) {
+        
+    }
 }

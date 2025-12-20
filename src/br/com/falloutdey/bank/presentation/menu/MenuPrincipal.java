@@ -17,17 +17,17 @@ public class MenuPrincipal {
         System.out.println("Menu Principal");
         System.out.println("1. Criar Conta");
         System.out.println("2. Sair");
-        System.out.print("Escolha uma opção: ");
-        int opcao = Integer.parseInt(input.readLine());
+        int opcao = input.lerInt("Escolha uma opção: ");
 
         switch(opcao) {
             case 1:
-                String nome = input.readLine("Digite seu nome: ");
-                String email
-                System.out.println("Escolha o tipo de conta:\n1. Corrente\n 2. Poupança");
-                int tipoConta = Integer.parseInt(input.readLine());
+                String nome = input.lerString("Digite seu Nome: ");
+                String email = input.lerString("Digite seu E-mail: ");
+                String senha = input.lerString("Digite sua senha: ");
+                int tipoConta = input.lerInt("Escolha o tipo de conta:\n1. Corrente\n 2. Poupança\n>> ");
                 if (tipoConta == 1) {
                     System.out.println("Conta Corrente criada com Sucesso!");
+                    ContaService.criarConta(nome, email, senha, "Corrente");
                 }
                 else if (tipoConta == 2) {
                     System.out.println("Conta Poupança criada com Sucesso!");
