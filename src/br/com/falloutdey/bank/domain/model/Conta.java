@@ -3,9 +3,8 @@ public class Conta {
     private String tipoConta;
     private double saldo = 0.0;
 
-    public Conta(String tipoConta, double saldo) {
+    public Conta(String tipoConta) {
         this.tipoConta = tipoConta;
-        this.saldo = saldo;
     }
 
     public String getTipoConta() {
