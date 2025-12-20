@@ -10,26 +10,44 @@ public class User {
         this.senha = senha;
     }
 
+    /** 
+     * @return String
+     */
     public String getNome() {
         return nome;
     }
 
+    /** 
+     * @param nome
+     */
     public void setNome(String nome) {
         this.nome = nome;
     }
 
+    /** 
+     * @return String
+     */
     public String getEmail() {
         return email;
     }
 
+    /** 
+     * @param email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
 
+    /** 
+     * @return String
+     */
     public String getSenha() {
         return senha;
     }
 
+    /** 
+     * @param senha
+     */
     public void setSenha(String senha) {
         this.senha = senha;
     }

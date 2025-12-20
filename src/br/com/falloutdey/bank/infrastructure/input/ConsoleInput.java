@@ -1,7 +1,9 @@
 package br.com.falloutdey.bank.infrastructure.input;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.function.Function;
 
 public class ConsoleInput {
     private final BufferedReader reader;
@@ -10,13 +12,29 @@ public class ConsoleInput {
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
-    public lerString(String Mensagem) {
-        System.out.print(Mensagem);
-        try {
-            return reader.readLine();
-        } catch (Exception e) {
-            System.out.println("Erro ao ler a mensagem.");
-            return reader.readLine();
+    public <T> T input(String input, Function<String, T> conversor, String erro) {
+        while(true) {
+            System.out.print(input);
+            try {
+                String linha =  reader.readLine();
+                return conversor.apply(linha);
+            } catch (IOException e) {
+                System.out.println("Erro ao ler a entrada.");
+            } catch (Exception e) {
+                System.out.println(erro);
+            }
         }
+    }
+
+    public String letString(String input) {
+        return input(input, Linha -> Linha, "Input Inválido");
+    }
+
+    public int lerInt(String input) {
+        return input(input, Integer::parseInt, "Valor Inválido. Digite um número inteiro.");
+    }
+
+    public double lerDouble(String input) {
+        return input(input, Double::parseDouble, "Valor Inválido. Digite um número decimal.");
     }
 }
