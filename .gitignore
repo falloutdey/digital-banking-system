@@ -10,3 +10,5 @@ out/
 
 # Libs locais
 lib/
+
+.fake
