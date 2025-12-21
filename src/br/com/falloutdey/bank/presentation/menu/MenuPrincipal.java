@@ -8,10 +8,10 @@ public class MenuPrincipal {
     private ContaService contaService;
     private ConsoleInput input;
 
-    public MenuPrincipal(ContaService contaService, ConsoleInput input) {
-        this.contaService = contaService;
-        this.input = input;
-    }
+    // public MenuPrincipal() {
+    //     this.contaService = contaService;
+    //     this.input = input;
+    // }
 
     public void exibirMenu() {
         System.out.println("Menu Principal");
