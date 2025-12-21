@@ -26,7 +26,7 @@ public class MenuPrincipal {
                 String nome = input.lerString("Digite seu Nome: ");
                 String email = input.lerString("Digite seu E-mail: ");
                 String senha = input.lerString("Digite sua senha: ");
-                int tipoConta = input.lerInt("Escolha o tipo de conta:\n1. Corrente\n 2. Poupança\n>> ");
+                int tipoConta = input.lerInt("Escolha o tipo de conta:\n1. Corrente\n2. Poupança\n>> ");
                 if (tipoConta == 1) {
                     contaService.criarConta(nome, email, senha, "Corrente");
                     System.out.println("Conta Corrente criada com Sucesso!");
