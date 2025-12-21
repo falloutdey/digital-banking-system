@@ -18,7 +18,8 @@ public class MenuPrincipal {
     public void exibirMenu() {
         System.out.println("Menu Principal");
         System.out.println("1. Criar Conta");
-        System.out.println("2. Sair");
+        System.out.println("2. Listar Contas");
+        System.out.println("3. Sair");
         int opcao = input.lerInt("Escolha uma opção: ");
 
         switch(opcao) {
@@ -40,6 +41,9 @@ public class MenuPrincipal {
                 }
                 break;
             case 2:
+                contaService.ListarContas();
+                break;
+            case 3:
                 System.out.println("Saindo...");
                 break;
         }
