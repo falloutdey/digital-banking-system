@@ -26,10 +26,11 @@ public class MenuPrincipal {
                 String senha = input.lerString("Digite sua senha: ");
                 int tipoConta = input.lerInt("Escolha o tipo de conta:\n1. Corrente\n 2. Poupança\n>> ");
                 if (tipoConta == 1) {
-                    System.out.println("Conta Corrente criada com Sucesso!");
                     contaService.criarConta(nome, email, senha, "Corrente");
+                    System.out.println("Conta Corrente criada com Sucesso!");
                 }
                 else if (tipoConta == 2) {
+                    contaService.criarConta(nome, email, senha, "Poupança");
                     System.out.println("Conta Poupança criada com Sucesso!");
                 }
                 else {
