@@ -1,5 +1,7 @@
 package br.com.falloutdey.bank.presentation.menu;
 
+import java.io.BufferedReader;
+
 import br.com.falloutdey.bank.domain.service.ContaService;
 import br.com.falloutdey.bank.infrastructure.input.ConsoleInput;
 
@@ -8,10 +10,10 @@ public class MenuPrincipal {
     private ContaService contaService;
     private ConsoleInput input;
 
-    // public MenuPrincipal() {
-    //     this.contaService = contaService;
-    //     this.input = input;
-    // }
+    public MenuPrincipal(ConsoleInput input) {
+        this.input = input;
+        this.contaService = new ContaService();
+    }
 
     public void exibirMenu() {
         System.out.println("Menu Principal");

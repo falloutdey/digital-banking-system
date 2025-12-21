@@ -2,14 +2,13 @@ package br.com.falloutdey.bank.infrastructure.input;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.function.Function;
 
 public class ConsoleInput {
     private final BufferedReader reader;
 
     public ConsoleInput(BufferedReader reader) {
-        this.reader = new BufferedReader(new InputStreamReader(System.in));
+        this.reader = reader;
     }
 
     public <T> T input(String input, Function<String, T> conversor, String erro) {
