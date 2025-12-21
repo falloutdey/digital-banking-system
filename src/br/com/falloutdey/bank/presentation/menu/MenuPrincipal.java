@@ -1,7 +1,5 @@
 package br.com.falloutdey.bank.presentation.menu;
 
-import java.io.BufferedReader;
-
 import br.com.falloutdey.bank.domain.service.ContaService;
 import br.com.falloutdey.bank.infrastructure.input.ConsoleInput;
 
@@ -20,9 +18,10 @@ public class MenuPrincipal {
         System.out.println("1. Criar Conta");
         System.out.println("2. Listar Contas");
         System.out.println("3. Sair");
-        int opcao = input.lerInt("Escolha uma opção: ");
+        int opcao = 0;
 
-        switch(opcao) {
+        while(opcao != 3 ) {
+            switch(opcao) {
             case 1:
                 String nome = input.lerString("Digite seu Nome: ");
                 String email = input.lerString("Digite seu E-mail: ");
@@ -39,13 +38,12 @@ public class MenuPrincipal {
                 else {
                     System.out.println("Opção Inválida.");
                 }
-                break;
             case 2:
                 contaService.ListarContas();
-                break;
-            case 3:
-                System.out.println("Saindo...");
-                break;
+            default:
+                System.out.println("Opção Inválida.");
+            }
+            opcao = input.lerInt("Escolha uma opção: ");
         }
     }
 }
