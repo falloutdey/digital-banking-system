@@ -18,7 +18,10 @@ public class ContaService {
         else {
             User usuario = new User(nome, email, senha);
             Conta conta = new Conta(tipoConta);
-            
+
+            usuarios.put(email, usuario);
+            usuario.adicionarConta(conta);
+
             System.out.println("Conta criada com sucessso!");
         }
     }
