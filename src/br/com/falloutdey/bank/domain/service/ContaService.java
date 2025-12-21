@@ -25,4 +25,17 @@ public class ContaService {
             System.out.println("Conta criada com sucessso!");
         }
     }
+
+    public static void ListarContas() {
+        if (usuarios.isEmpty()) {
+            System.out.println("Nenhuma conta cadastrada.");
+        } else {
+            for (User usuario : usuarios.values()) {
+                System.out.println("Usuário: " + usuario.getNome() + "\nE-mail: " + usuario.getEmail());
+                for (Conta conta : usuario.getContas()) {
+                    System.out.println("\nTipo de Conta: " + conta.getTipoConta() + "\nSaldo: " + conta.getSaldo() + "\n");
+                }
+            }
+        }
+    }
 }
