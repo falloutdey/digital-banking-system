@@ -21,8 +21,6 @@ public class ContaService {
 
             usuarios.put(email, usuario);
             usuario.adicionarConta(conta);
-
-            System.out.println("Conta criada com sucessso!");
         }
     }
 

@@ -18,11 +18,10 @@ public class MenuPrincipal {
         System.out.println("1. Criar Conta");
         System.out.println("2. Listar Contas");
         System.out.println("3. Sair");
-        int opcao = 0;
+        int opcao = input.lerInt("Escolha uma opção: ");
 
-        while(opcao != 3 ) {
-            switch(opcao) {
-            case 1:
+        while(opcao != 3) {
+            if(opcao == 1) {
                 String nome = input.lerString("Digite seu Nome: ");
                 String email = input.lerString("Digite seu E-mail: ");
                 String senha = input.lerString("Digite sua senha: ");
@@ -30,20 +29,25 @@ public class MenuPrincipal {
                 if (tipoConta == 1) {
                     contaService.criarConta(nome, email, senha, "Corrente");
                     System.out.println("Conta Corrente criada com Sucesso!");
+                    break;
                 }
                 else if (tipoConta == 2) {
                     contaService.criarConta(nome, email, senha, "Poupança");
                     System.out.println("Conta Poupança criada com Sucesso!");
+                    break;
                 }
                 else {
                     System.out.println("Opção Inválida.");
                 }
-            case 2:
+            } else if(opcao == 2) {
                 contaService.ListarContas();
-            default:
+                break;
+            } else if(opcao == 3) {
+                System.out.println("Saindo...");
+                break;
+            } else {
                 System.out.println("Opção Inválida.");
             }
-            opcao = input.lerInt("Escolha uma opção: ");
         }
     }
 }
